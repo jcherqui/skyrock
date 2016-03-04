@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "lame": "latest",
+    "icy": "latest",
+    "speaker": "latest"
+  }
+}
