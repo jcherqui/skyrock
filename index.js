@@ -5,6 +5,7 @@ const co = require('co');
 
 const skyrock = 'http://firewall.pulsradio.com';
 const radiometal = 'http://stream.radiometal.com:8010';
+const emission = new RegExp('Difool');
 
 class Radio {
     constructor(channel) {
@@ -57,10 +58,14 @@ const run = function*run() {
         console.log(titleRadioSkyrock);
 
         // IF LISTEN RADIO SKYROCK && TITLE DOESN'T MATCH RADIO LIBRE OF DIFOOL
-        if (radioSkyrock.state === 'open' && !titleRadioSkyrock.match(/Difool/)) {
+        if (radioSkyrock.state === 'open' && !titleRadioSkyrock.match(emission)) {
             console.log('change radio');
             radioSkyrock.close();
             yield radioMetal.listen();
+        }
+
+        if (radioSkyrock.state === 'close' && titleRadioSkyrock.match(emission)) {
+            yield radioSkyrock.listen();
         }
     }
 };
