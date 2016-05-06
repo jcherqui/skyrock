@@ -1,7 +1,7 @@
 import co from 'co';
 import Radio from './radio';
 
-const skyrock = 'http://firewall.pulsradio.com';
+const skyrock = 'http://icecast.skyrock.net/s/natio_aac_64k';
 const radiometal = 'http://stream.radiometal.com:8010';
 const emission = new RegExp('Difool');
 
