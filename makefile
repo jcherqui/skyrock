@@ -1,5 +1,5 @@
 run:
-	babel-node index.js
+	@ ./node_modules/.bin/babel-node index.js
 
 install:
-	npm i
+	@ npm i
