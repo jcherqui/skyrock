@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+
+import 'babel-polyfill';
 import co from 'co';
 import Radio from './radio';
 

@@ -1,11 +1,29 @@
-Skymetal
+Skyrock
 ===
 
-Steps
+A CLI tool to replace music and advertising by another web radio.
+
+## Installation
+
+`npm i -g skyrock`
+
+## Usage
+
+`skyrock`
+
+## Development
+
+Install dependencies:
+
+`make install`
+
+Start project:
+
+`make run`
+
+License
 ---
 
-1. Listen skyrock
-2. 
-    2.1 stop skyrock if rap
-    2.2 start radio metal
-3. Reconnect skyrock if rap is finish
+MIT
+
+**Free Software, Hell Yeah!**
