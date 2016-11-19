@@ -2,15 +2,12 @@
 
 import 'babel-polyfill';
 import co from 'co';
+import config from 'config';
 import Radio from './radio';
 
-const skyrock = 'http://icecast.skyrock.net/s/natio_aac_64k';
-const radiometal = 'http://stream.radiometal.com:8010';
-const emission = new RegExp('Difool');
-
 const run = function* run() {
-    const radioSkyrock = new Radio(skyrock);
-    const radioMetal = new Radio(radiometal);
+    const radioSkyrock = new Radio(config.skyrock_url);
+    const radioMetal = new Radio(config.radiometal_url);
 
     yield radioSkyrock.listen();
 
@@ -19,13 +16,13 @@ const run = function* run() {
         console.log({ titleRadioSkyrock });
 
         // LISTEN RADIO METAL
-        if (radioSkyrock.state === 'open' && !titleRadioSkyrock.match(emission)) {
+        if (radioSkyrock.state === 'open' && !titleRadioSkyrock.match(new RegExp(config.emission))) {
             radioSkyrock.close();
             yield radioMetal.listen();
         }
 
         // LISTEN SKYROCK
-        if (radioSkyrock.state === 'close' && titleRadioSkyrock.match(emission)) {
+        if (radioSkyrock.state === 'close' && titleRadioSkyrock.match(new RegExp(config.emission))) {
             radioMetal.close();
             yield radioSkyrock.listen();
         }
