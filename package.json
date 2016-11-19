@@ -1,4 +1,6 @@
 {
+    "name": "skyrock",
+    "version": "0.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/jcherqui/skyrock.git"
@@ -8,6 +10,7 @@
         "babel-polyfill": "^6.16.0",
         "co": "^4.6.0",
         "commander": "^2.9.0",
+        "config": "git+https://github.com/jcherqui/node-config",
         "icy": "^2.1.0",
         "lame": "^1.2.3",
         "speaker": "^0.3.0"
