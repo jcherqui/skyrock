@@ -5,7 +5,7 @@ const skyrock = 'http://icecast.skyrock.net/s/natio_aac_64k';
 const radiometal = 'http://stream.radiometal.com:8010';
 const emission = new RegExp('Difool');
 
-const run = function*run() {
+const run = function* run() {
     const radioSkyrock = new Radio(skyrock);
     const radioMetal = new Radio(radiometal);
 
