@@ -1,32 +1,17 @@
 #!/usr/bin/env node
 
 import 'babel-polyfill';
-import co from 'co';
-import config from 'config';
-import Radio from './radio';
+import icy from 'icy';
+import fs from 'fs';
+import dotenv from 'dotenv';
+import fetch from 'node-fetch';
 
-const run = function* run() {
-    const radioSkyrock = new Radio(config.skyrock_url);
-    const radioMetal = new Radio(config.radiometal_url);
+dotenv.config({ silent: true });
 
-    yield radioSkyrock.listen();
+(async () => {
+    const url = (await fetch(process.env.RADIO_URL)).url;
 
-    while (true) {
-        const titleRadioSkyrock = yield radioSkyrock.title();
-        console.log({ titleRadioSkyrock });
-
-        // LISTEN RADIO METAL
-        if (radioSkyrock.state === 'open' && !titleRadioSkyrock.match(new RegExp(config.emission))) {
-            radioSkyrock.close();
-            yield radioMetal.listen();
-        }
-
-        // LISTEN SKYROCK
-        if (radioSkyrock.state === 'close' && titleRadioSkyrock.match(new RegExp(config.emission))) {
-            radioMetal.close();
-            yield radioSkyrock.listen();
-        }
-    }
-};
-
-co(run());
+    await icy.get(url, (res) => {
+        res.pipe(fs.createWriteStream('radio.mp3'));
+    });
+})();

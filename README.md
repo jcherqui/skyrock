@@ -1,7 +1,7 @@
 Skyrock
 ===
 
-A CLI tool to replace music and advertising by another web radio.
+> A CLI tool to replace music and advertising by another web radio.
 
 ## Installation
 

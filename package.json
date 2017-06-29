@@ -1,27 +1,25 @@
 {
-    "name": "skyrock",
-    "version": "0.1.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jcherqui/skyrock.git"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "babel-polyfill": "^6.16.0",
-        "co": "^4.6.0",
-        "commander": "^2.9.0",
-        "config": "git+https://github.com/jcherqui/node-config",
-        "icy": "^2.1.0",
-        "lame": "^1.2.3",
-        "speaker": "^0.3.0"
-    },
-    "devDependencies": {
-        "babel-cli": "^6.18.0",
-        "babel-preset-es2015": "^6.18.0",
-        "eslint": "^3.10.2",
-        "eslint-config-airbnb": "^13.0.0",
-        "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-jsx-a11y": "^2.2.3",
-        "eslint-plugin-react": "^6.7.1"
-    }
+  "name": "skyrock",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcherqui/skyrock.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "dotenv": "^4.0.0",
+    "icy": "^2.1.0",
+    "node-fetch": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0"
+  }
 }
