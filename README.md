@@ -14,6 +14,6 @@ A CLI tool to replace music and advertising by another web radio.
 License
 ---
 
-MIT
+GNU GPL v3.0
 
 **Free Software, Hell Yeah!**
